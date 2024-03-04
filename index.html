@@ -1,60 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.0/html2pdf.bundle.min.js"></script>
-   <style>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Current Date in dd-mm-yyyy Format</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.0/html2pdf.bundle.min.js"></script>
 
-    </style>
-  </head>
-  <body>
-    
+</head>
+<body>
 
-      <div id="ssa" >
 
-        <table style="width: 100%">
-          <td colspan="5">
+
+<div style="background-color: #dbe2f1;">
+    <h1 class="text-center " style="width:100vw;font-family:serif;" >New Laky Traders</h1>
+    <p class="text-center " style="width:100vw;font-family:serif;" >Sole Distributor</p>
+    <h2 class="text-center " style="width:100vw;font-family:serif;">IGLOO Ice-cream</h2>
+    <p class="text-center " style="width:100vw;font-family:serif;" >Pro: Rezaul Karim [Raj]</p>
+    <p class="text-center text-light" style="width:100vw;background-color: #385391;font-family:serif;" >Shalgaria Hospital Road , Pabna</p>
+
+    <div class="container ">
+        <div class="row align-items-center">
+          <div class="col">
+            <label style="font-family:  serif;" for="name" class="form-label">Issue To : </label>
+            <input style="border : none; text-align: left;background-color: #dbe2f1;" class="no-outline" value="" type="text"  id="name" >
+          </div>
+          <div class="col">
             
-              <h1 style="text-align: center; margin-top: 5vh;" >ABDUL MOMEN LIMITED</h1>
-          </td>
-          <tr>
-            <td >
-              <label style="margin-left: 5vw" for="isu" class="">ISSU TO : </label>
-              <input style="border : none" type="text" id="isu" placeholder="............." class="no-outline">
-            </td>
-            <td style="text-align: right">
-              <label for="dat" class="">DATE : </label>
-              <input  style="border : none; text-align: left" type="text" id="dat" placeholder="00-00-0000" class="no-outline">
-            </td>
-            
-          </tr>
-        </table>
-
-    <table class="table" id="tab">
-      <thead class="table-light">
-        <tr>
-          <th scope="col">S/L</th>
-          <th scope="col">ITEMS</th>
-          <th scope="col">P.S</th>
-          <th scope="col">QUANTITY</th>
-          <th scope="col">RATE</th>
-          <th scope="col">AMOUNT</th>
-        </tr>
-      </thead>
-      <tbody>
-      
-      </tbody>
-    </table>
+          </div>
+          <div class="col">
+            <label style="font-family:  serif;" for="rateInput" class="form-label">Delivery Date : </label>
+            <input placeholder="dd/mm/yyyy" style="border : none; text-align: left;background-color: #dbe2f1;" class="no-outline" type="text" value=""  id="rateInput" >
+          </div>
+        </div>
       </div>
+
+    <div class="container">
+        <div class="row align-items-center">
+          <div class="col ">
+            <label style="font-family:  serif" for="name" class="form-label">Address : </label>
+            <input style="border : none; text-align: left;background-color: #dbe2f1;" class="no-outline" type="text" value=""  id="name" >
+          </div>
+          <div class="col">
+            
+          </div>
+          <div class="col">
+           
+          </div>
+        </div>
+      </div>
+    <table id="table" style="font-family:  serif;" class="table table-bordered table-hover text-center">
+        <thead class="table-light">
+          <tr>
+            <th  rowspan="2" scope="col">Sl No : </th>
+            <th >Product Name<br>[Item]</th>
+            <th >P.S</th>
+            <th scope="col">Carton<br>[Quantity]</th>
+            <th scope="col">Price<br>[Per Carton]</th>
+            <th scope="col">Net Price</th>
+            <th scope="col">Free Item</th>
+          </tr>
+        </thead>
+        <tbody> 
+         <tr>
+            <td colspan="5">Total Price : </td>
+            <td colspan="2">0</td>
+            
+         </tr>
+          
+        </tbody>
+      </table>
 
       <h4>Add New item </h4>
       
       <div class="input-group mb-3">
             <div class="form-control">
-                <label for="selectItem" class="form-label">Items</label>
+                <label for="selectItem" class="form-label">Product Name<br>[Item]</label>
                 <select id="selectItem" class="form-select"  aria-label="Default select example">
                     
                     <option value="24">CHOCOBAR</option>
@@ -66,89 +87,33 @@
                   </select>
             </div>
             <div class="form-control">
-                <label for="quantityInput" class="form-label">Quantity</label>
+                <label for="quantityInput" class="form-label">Carton<br> [Quantity]</label>
                 <input type="number" onkeypress="return isNumberKey(event)"  value='' min="0" step="1" data-bind="value:quantityInput" id="quantityInput" class="form-control">
             </div>
 
             <div class="form-control">
-                <label for="rateInput" class="form-label">Rate</label>
-                <input type="number" value="" type="number" onkeypress="return isNumberKey(event)"  value='' min="0" step="1" data-bind="value:rateInput" id="rateInput" class="form-control">
+                <label for="psInp" class="form-label">Price<br>[Per Carton]</label>
+                <input type="number" value="" type="number" onkeypress="return isNumberKey(event)"  value='' min="0" step="1" data-bind="value:psInp" id="psInp" class="form-control">
             </div>
             <div class="form-control">
-                <label for="amt" class="form-label">Amount</label>
+                <label for="amt" class="form-label">Free Item<br> .</label>
                 <input type="number" value="" type="number" onkeypress="return isNumberKey(event)"  value='' min="0" step="1" data-bind="value:amt" id="amt" class="form-control">
             </div>
       </div>
 
-
-      
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary" onclick="addRow()" type="button">Add item</button>
+        <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" onclick="insertCell()" type="button">Add item</button>
         <button class="btn btn-primary" onclick="deleteRow()" type="button">Delete</button>
-        <button class="btn btn-primary" onclick="exportToPDF()" type="button">Download Report</button>
+        <button class="btn btn-primary" onclick="m()" type="button">Download Report</button>
        
         
       </div>
-
-      
-
-      <script>
-       
-        function m(){
-            var table = document.getElementById("tab");
-            
-
-           
-
-            var quantaty = document.getElementById("quantityInput").value;
-            var rate = document.getElementById("rateInput").value;
-            var am = document.getElementById("amt").value;
-            
-            var tableLength = table.tBodies[0].rows.length;
-        console.log("Table length:", tableLength);
-
-         
+</div>
 
 
-            var itm = document.getElementById("selectItem");
-            var row = table.insertRow();
-            var cell1 = row.insertCell(table.length);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            var cell4 = row.insertCell(3);
-            var cell5 = row.insertCell(4);
-            var cell6 = row.insertCell(5);
-            
 
-           
-
-            cell1.innerHTML = ""+tableLength;
-            cell2.innerHTML = selectedItem;
-            cell3.innerHTML = selectedOption.value;
-            cell4.innerHTML = quantaty;
-            cell5.innerHTML = rate;
-            cell6.innerHTML = am;
-            
-            rate = "";
-            am ="";
-          }
-
-        
-        function exportToPDF() {
-            const element = document.getElementById("ssa");
-            html2pdf()
-                .from(element)
-                .save('table.pdf');
-        }
-        function deleteRow(){
-          var ax = prompt("S/L no : ");
-            if(ax > 0){
-              document.getElementById("tab").deleteRow(ax);
-              updateSequentialNumbers();
-            }
-        }
-
-        function getCurrentDate() {
+<script>
+function getCurrentDate() {
     var currentDate = new Date();
     var day = currentDate.getDate();
     var month = currentDate.getMonth() + 1; // Months are zero-based
@@ -159,70 +124,82 @@
     month = (month < 10) ? '0' + month : month;
 
     var formattedDate = day + '-' + month + '-' + year;
-    document.getElementById("dat").value = formattedDate;
-   // return formattedDate;
+
+    return formattedDate;
 }
-getCurrentDate();
+
+function insertCell(){
 
 
+    var table = document.getElementById('table');
+    
+    //add new item
+      var quantaty = document.getElementById("quantityInput").value;
+      var ratx = document.getElementById("psInp").value;
+      var item = document.getElementById("selectItem");
+      var am = document.getElementById("amt").value;
+     
+      if(quantaty =='' || ratx ==''){
+                alert("Null Input !");
+                return;
+            } 
 
+      var selectedItem = item.options[item.selectedIndex].text;
+      var selectedOption = item.options[item.selectedIndex];
+            //.....
 
+            var row = table.insertRow(table.rows.length-1);
 
-function addRow() {
-    var table = document.getElementById("tab").getElementsByTagName('tbody')[0];
-    var item = document.getElementById("selectItem");
-    var selectedItem = item.options[item.selectedIndex].text;
-    var selectedOption = item.options[item.selectedIndex];
-    var newRow = table.insertRow();
+            
 
-    // Add sequential number in the first column
-    var cell1 = newRow.insertCell(0);
-    cell1.textContent = table.rows.length;
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
 
-    // Add cells for other columns (you can add more as needed)
-    var cell2 = newRow.insertCell(1);
-    cell2.textContent = selectedItem;
-    var cell3 = newRow.insertCell(2);
-    cell3.textContent = selectedOption.value;
+    cell1.innerHTML = table.rows.length-2;
+    cell2.innerHTML = selectedItem;
+    cell3.innerHTML = selectedOption.value;
+    cell4.innerHTML = quantaty;
+    cell5.innerHTML = ratx;
+    cell6.innerHTML = parseInt(quantaty,10) * parseInt(ratx,10);
+    cell7.innerHTML = am;
 
-    // Add delete button in the last column
-    var cell4 = newRow.insertCell(3);
-    cell4.textContent = document.getElementById("quantityInput").value;
-    var cell5 = newRow.insertCell(4);
-    cell5.textContent = document.getElementById("rateInput").value;
-    var cell6 = newRow.insertCell(5);
-    cell6.textContent = document.getElementById("amt").value;
-    /*
-    var deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
-    deleteButton.onclick = function() {
-        deleteRow(this);
-    };
-    cell4.appendChild(deleteButton);
-    */
-
-    // Update sequential numbers
     updateSequentialNumbers();
     document.getElementById("quantityInput").value = '';
-    document.getElementById("rateInput").value = '';
+    document.getElementById("psInp").value = '';
     document.getElementById("amt").value = '';
-   
-}
-/*
-function deleteRow() {
-    var row = 1;
-    row.parentNode.removeChild(row);
 
-    // Update sequential numbers after deletion
-    updateSequentialNumbers();
+    sumCell();
+            
 }
-*/
-function updateSequentialNumbers() {
-    var table = document.getElementById("tab").getElementsByTagName('tbody')[0];
-    for (var i = 0; i < table.rows.length; i++) {
-        table.rows[i].cells[0].textContent = i + 1;
-    }}
-    function isNumberKey(evt)
+function sumCell(){
+    var sum = 0;
+    var table = document.getElementById('table');
+    for(var i=1; i <= table.rows.length-2; i++){
+       sum += parseInt(table.rows[i].cells.item(5).innerHTML,10);
+    }
+    table.rows[table.rows.length-1].cells.item(1).innerHTML=sum;
+    console.log(sum);
+}
+
+
+function m(){
+    alert("This Feature is not available at this time");
+}
+
+function deleteRow(){
+          var ax = prompt("S/L no : ");
+            if(ax > 0){
+              document.getElementById("table").deleteRow(ax);
+              updateSequentialNumbers();
+              sumCell();
+            }
+        }
+function isNumberKey(evt)
 			{
 				var charCode = (evt.which) ? evt.which : evt.keyCode;
 				if (charCode != 46 && charCode > 31 
@@ -230,12 +207,18 @@ function updateSequentialNumbers() {
 				return false;
 				return true;
 			}  
-      </script>
+            function updateSequentialNumbers() {
+    var table = document.getElementById("table").getElementsByTagName('tbody')[0];
+    for (var i = 0; i < table.rows.length-1; i++) {
+        table.rows[i].cells[0].textContent = i + 1;
+    }}
+    
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+//document.getElementById("currentDate").textContent = getCurrentDate();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-  </body>
+
+</body>
 </html>
